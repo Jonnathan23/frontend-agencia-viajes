@@ -56,7 +56,10 @@ body {
     color: var(--white);
     width: 100%;
     padding: 2rem 1rem;
-    
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /** |-----|| Pages  ||-----|*/
@@ -255,3 +258,114 @@ body {
 }
 
 /** |-----|| Components  ||-----|*/
+
+/* NavMenu */
+.popover {
+    position: relative;
+    display: inline-block;
+}
+
+.popover--button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    background-color: var(--off-purple);
+}
+
+.popover--button--bars-icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--white);
+}
+
+/* ---- Clases: Enter Transition */
+
+.popover--transition--enter {
+    transition: opacity 200ms ease-out,
+        transform 200ms ease-out;
+}
+
+.popover--transition--enter-from {
+    opacity: 0;
+    transform: translateY(0.25rem);
+}
+
+.popover--transition--enter-to {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---- Clases: Leave Transition */
+.popover--transition--leave {
+    transition: opacity 150ms ease-in,
+        transform 150ms ease-in;
+}
+
+.popover--transition--leave-from {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.popover--transition--leave-to {
+    opacity: 0;
+    transform: translateY(4px);
+}
+
+.popover--panel {
+    position: absolute;
+    left: 50%;
+    top: auto;
+    margin-top: 1.25rem;
+    display: flex;
+    width: 100%;
+    min-width: 15rem;
+    transform: translateX(-100%);
+    z-index: 10;
+}
+
+.popover--panel--content {
+    box-sizing: border-box;
+    padding: 1rem;
+    flex-shrink: 1;
+    width: 100%;
+    max-width: 15rem;
+    border-radius: 0.75rem;
+    background-color: #fff;
+    color: #111827;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6 -2px rgba(0, 0, 0, 0.05);
+}
+
+.popover--panel--message {
+    text-align: center;
+}
+
+.popover--panel--link {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.popover--panel--link:hover {
+    color: var(--purple-950);
+}
+
+
+@media (min-width: 1024px) {
+    .popover--panel {
+        width: auto;
+        max-width: min-content;
+        transform: translateX(-12rem);
+    }
+}
