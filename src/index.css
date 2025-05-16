@@ -1,0 +1,174 @@
+:root {
+    --off-purple: #d3bef0;
+    --purple: #792aff;
+    --deep-purple: #4e10b9;
+    --white: #ffffff;
+    --off-white: #f2eef9;
+}
+
+/* Renicio para que 1rem = 10px*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/** |-----|| Layouts  ||-----|*/
+.cont--auth {
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--off-white);
+}
+
+/** |-----|| Pages  ||-----|*/
+
+/* Auth */
+.panels-container {
+    width: 90%;
+    margin: auto;
+    background-color: var(--white);
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    box-shadow: 31px 24px 26px -6px rgba(211, 190, 240, 0.68);
+    -webkit-box-shadow: 31px 24px 26px -6px rgba(211, 190, 240, 0.68);
+    -moz-box-shadow: 31px 24px 26px -6px rgba(211, 190, 240, 0.68);
+}
+
+/* Login */
+.cont--form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+}
+
+.auth--title{
+    color: var(--deep-purple);
+}
+
+.form--login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cont--field {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.label--field {
+    color: var(--purple);
+}
+
+.field {
+    width: 100%;
+    padding: .5rem;    
+    border: none;
+    border-bottom: 1px solid var(--purple);
+    outline: none;
+    color: var(--off-purple);
+}
+
+.cont--button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.button {
+    background-color: var(--purple);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;    
+    cursor: pointer;
+}
+
+.button--no-account{
+    background-color: transparent;
+    color: var(--purple);
+    text-decoration: underline;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+@media (min-width: 464px) {
+    .panels-container {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        width: 90%;
+        margin: auto;
+
+        transition: all 0.6s ease;
+        background-color: transparent;
+    }
+
+    .panel {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: background-color .9s ease, transform .9s ease;
+    }
+
+    .panel--left {
+        background: #fff;
+        color: #000;
+    }
+
+    .panel--right {
+        background: var(--purple);
+        color: var(--white);
+    }
+
+    /* Al invertir, rotamos en X los paneles con translate */
+    .panels-container.reversed .panel--left {
+        transform: translateX(100%);
+    }
+
+    .panels-container.reversed .panel--right {
+        transform: translateX(-100%);
+    }
+}
+
+@media (min-width: 964px) {
+    .panels-container {
+        max-width: 80rem;
+        height: 40rem;
+    }
+}
+
+/** |-----|| Components  ||-----|*/
