@@ -28,12 +28,12 @@ export default function MyProfile() {
     setIsEditing(false);
   };
 
-return (
+  return (
     <div className="myprofile-container">
-        <div className="myprofile-avatar">
-            {user.nombre.charAt(0)}
-            {user.apellido.charAt(0)}
-        </div>
+      <div className="myprofile-avatar">
+        {user.nombre.charAt(0)}
+        {user.apellido.charAt(0)}
+      </div>
 
       <h2 className="myprofile-title">Mi Perfil</h2>
 
