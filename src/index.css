@@ -1,13 +1,69 @@
 :root {
     --off-purple: #d3bef0;
     --purple: #792aff;
-    --deep-purple: #4e10b9;
+    --deep-purple: #4e10b9; /* Muy agresivo, encendido */
     --white: #ffffff;
     --off-white: #f2eef9;
     --off-second-white: #f2f5ff;
     --green: #6ae59b;
     --off-gray: #c5c8e2;
 }
+
+/* Renicio para que 1rem = 10px*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/** |-----|| Layouts  ||-----|*/
+
+/* Auth */
+.cont--auth {
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--off-white);
+}
+
+/* AppTravels */
+.app-travels {
+    width: 100%;
+    height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: var(--off-white);
+}
+
+.app-travels--footer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--deep-purple);
+}
+
+/** |-----|| Pages  ||-----|*/
+
+/* MyProfile */
 /* Mi Perfil  */
 .myprofile-container {
     width: 95vw;
@@ -202,6 +258,7 @@
         padding: 3rem 1.2rem;
         max-width: 99vw;
     }
+
     .myprofile-info {
         max-width: 100%;
     }
@@ -212,24 +269,29 @@
         padding: 2rem 0.5rem;
         margin: 2rem 0.2rem;
     }
+
     .myprofile-info-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.7rem;
         padding: 1rem 1rem;
     }
+
     .myprofile-title {
         font-size: 2rem;
     }
+
     .myprofile-avatar {
         width: 7rem;
         height: 7rem;
         font-size: 2.5rem;
     }
+
     .myprofile-btn {
         padding: 1rem 2rem;
         font-size: 1.2rem;
     }
+
     .myprofile-avatar-edit {
         width: 2.2rem;
         height: 2.2rem;
@@ -238,59 +300,6 @@
     }
 }
 
-/* Renicio para que 1rem = 10px*/
-html {
-    font-size: 62.5%;
-    box-sizing: border-box;
-    scroll-snap-type: y mandatory;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-size: 16px;
-    font-family: "Work Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
-
-/** |-----|| Layouts  ||-----|*/
-
-/* Auth */
-.cont--auth {
-    height: 100dvh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--off-white);
-}
-
-/* AppTravels */
-.app-travels {
-    width: 100%;
-    height: 100dvh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    background-color: var(--off-white);
-}
-
-.app-travels--footer {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--deep-purple);
-}
-
-/** |-----|| Pages  ||-----|*/
 
 /* Auth */
 .panels-container {
@@ -487,7 +496,7 @@ body {
 
 /* Customer Page */
 .app-travels--content {
-    padding: 0 5rem;    
+    padding: 0 5rem;
 }
 
 
