@@ -12,16 +12,21 @@ export default function Router() {
         <BrowserRouter>
             <Routes>
                 <Route>
+                    {
+                        //Layout AppTravles
+                    }
                     <Route element={<AppTravels />}>
                         <Route path="/" element={<CustomerPage />} index/>
                         <Route path="/reservation/flight-id" element={<ReservationPage />}/>
+                        <Route path="/my-profile" element={<MyProfile />} />
                     </Route>
+                    {
+                        //Layout Auth
+                    }
                     <Route element={<Auth />}>
                         <Route path="/login" element={<LoginPage />} />
-                    </Route>
-                    <Route element={<MyProfile />}>
-                        <Route path="/MyProfile" element={<MyProfile />} />
-                    </Route>
+                        <Route path="/forgot-password" element={<LoginPage />} />
+                    </Route>                    
                 </Route>
             </Routes>
         </BrowserRouter>
