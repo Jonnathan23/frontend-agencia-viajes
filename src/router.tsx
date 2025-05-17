@@ -15,13 +15,11 @@ export default function Router() {
                     <Route element={<AppTravels />}>
                         <Route path="/" element={<CustomerPage />} index/>
                         <Route path="/reservation/flight-id" element={<ReservationPage />}/>
+                        <Route path="/MyProfile" element={<MyProfile />} />
                     </Route>
                     <Route element={<Auth />}>
                         <Route path="/login" element={<LoginPage />} />
-                    </Route>
-                    <Route element={<MyProfile />}>
-                        <Route path="/MyProfile" element={<MyProfile />} />
-                    </Route>
+                    </Route>                    
                 </Route>
             </Routes>
         </BrowserRouter>
