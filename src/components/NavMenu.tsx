@@ -35,7 +35,7 @@ export default function NavMenu() {
                                 className='popover--panel--link'
                             >Mis Reservaciones</Link>
                             <button
-                                className='popover--panel--link'
+                                className='popover--panel--link popover--panel--link--logout'
                                 type='button'
                                 onClick={handleLogout}
                             >

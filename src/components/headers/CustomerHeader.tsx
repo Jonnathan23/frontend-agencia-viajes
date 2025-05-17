@@ -1,16 +1,22 @@
 import { Link } from "react-router-dom";
 import NavMenu from "../NavMenu";
+import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 
 export default function CustomerHeader() {
     return (
         <header className="app-travels--header">
-            <div className="">
-                <Link to="/">
+            <div className="app-travels--header--container--logo">
+                <Link className="app-travels--header--logo" to="/">
                     <h1>SafeShip</h1>
                 </Link>
             </div>
             <nav className="app-travels--header--nav">
-                <Link to="/">Pagos</Link>
+                <form className="app-travels--header--nav--search">
+                    <input className="app-travels--header--nav--search--input" type="text" placeholder="Buscar vuelos" />
+                    <button className="app-travels--header--nav--search--button" type="submit">
+                        <MagnifyingGlassIcon className="app-travels--header--nav--search--icon" />
+                    </button>
+                </form>
                 <div>
                     <NavMenu />
                 </div>

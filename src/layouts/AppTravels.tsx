@@ -7,10 +7,10 @@ export default function AppTravels() {
     return (
         <div className="app-travels">
             {isCustomer ? <CustomerHeader /> : <AgentHeader />}
-            <div>
+            <div className="app-travels--content">
                 <Outlet />
             </div>
-            <footer>
+            <footer className="app-travels--footer">
                 <p>Footer</p>
             </footer>
         </div>
