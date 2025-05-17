@@ -27,7 +27,7 @@ export default function NavMenu() {
                         <div className="popover--panel--content">
                             <p className='popover--panel--message'>Hola: {/*TODO: USERNAME */}</p>
                             <Link
-                                to='/'
+                                to='/MyProfile'
                                 className='popover--panel--link'
                             >Mi Perfil</Link>
                             <Link

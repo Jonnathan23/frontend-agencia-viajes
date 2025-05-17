@@ -4,6 +4,7 @@ import CustomerPage from "./pages/customer/CustomerPage";
 import Auth from "./layouts/Auth";
 import LoginPage from "./pages/auth/Login";
 import ReservationPage from "./pages/customer/Reservations";
+import MyProfile from "./pages/customer/MyProfile.tsx";
 
 
 export default function Router() {
@@ -17,6 +18,9 @@ export default function Router() {
                     </Route>
                     <Route element={<Auth />}>
                         <Route path="/login" element={<LoginPage />} />
+                    </Route>
+                    <Route element={<MyProfile />}>
+                        <Route path="/MyProfile" element={<MyProfile />} />
                     </Route>
                 </Route>
             </Routes>
