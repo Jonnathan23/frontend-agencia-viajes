@@ -44,6 +44,22 @@ export const getReservationsByUser = async ({ usr_id }: Pick<ReservationApi, 'us
     }
 }
 
+export const getReservationById = async ({ res_id }: Pick<ReservationApi, 'res_id'>) => {
+    try {
+        const url = `/reservations/${res_id}`
+        const { data } = await api.get(url);
+        const response = reservationSchema.safeParse(data);
+
+        if (response.success) return response.data
+
+        const errorServer = new ErrorWithServer('Error de tipado');
+        errorServer.errorAlert();
+        return {} as Reservation
+    } catch (error) {
+        handlerApiError(error)
+    }
+}
+
 
 // Post
 export const createReservation = async ({ formData, usr_id, flt_id }: Pick<ReservationApi, 'formData' | 'usr_id' | 'flt_id'>) => {
