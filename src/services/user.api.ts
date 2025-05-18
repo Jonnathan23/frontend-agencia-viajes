@@ -1,11 +1,11 @@
-import type { User, UserForm } from "../types"
+import type { User } from "../types"
 import { handlerApiError } from "../utils/utils"
 import api from "../lib/axios"
 import { userSchema } from "../utils/auth.schema"
 import { ErrorWithServer } from "../errors/errors"
 
 export type UserApi = {
-    formData: UserForm
+    formData: User
     usr_id: User['usr_id']
 }
 
