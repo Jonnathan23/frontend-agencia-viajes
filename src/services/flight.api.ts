@@ -21,7 +21,7 @@ export const getAllFlights = async () => {
 
         const errorServer = new ErrorWithServer('Error de tipado');
         errorServer.errorAlert();
-        return [] as FlightForm[]
+        return [] as Flight[]
     } catch (error) {
         handlerApiError(error)
     }
