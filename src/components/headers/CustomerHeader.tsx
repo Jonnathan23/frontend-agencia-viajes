@@ -7,7 +7,7 @@ export default function CustomerHeader() {
         <header className="app-travels--header">
             <div className="app-travels--header--container--logo">
                 <Link className="app-travels--header--logo" to="/">
-                    <h1>SafeShip</h1>
+                    <h1>Safeship</h1>
                 </Link>
             </div>
             <nav className="app-travels--header--nav">
