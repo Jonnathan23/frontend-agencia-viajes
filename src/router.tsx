@@ -3,7 +3,7 @@ import AppTravels from "./layouts/AppTravels";
 import CustomerPage from "./pages/customer/CustomerPage";
 import Auth from "./layouts/Auth";
 import LoginPage from "./pages/auth/Login";
-import ReservationPage from "./pages/customer/Reservations";
+import Reservations from "./pages/customer/Reservations";
 import MyProfile from "./pages/customer/MyProfile.tsx";
 
 
@@ -17,7 +17,7 @@ export default function Router() {
                     }
                     <Route element={<AppTravels />}>
                         <Route path="/" element={<CustomerPage />} index/>
-                        <Route path="/reservation/flight-id" element={<ReservationPage />}/>
+                        <Route path="/reservations" element={<Reservations />}/>
                         <Route path="/my-profile" element={<MyProfile />} />
                     </Route>
                     {
