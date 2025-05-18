@@ -1,11 +1,11 @@
-import type { User, UserForm } from "../types"
+import type { User } from "../types"
 import { handlerApiError } from "../utils/utils"
 import api from "../lib/axios"
 import { userSchema } from "../utils/auth.schema"
 import { ErrorWithServer } from "../errors/errors"
 
 export type UserApi = {
-    formData: UserForm
+    formData: User
     usr_id: User['usr_id']
 }
 
@@ -41,3 +41,17 @@ export const createUser = async ({ formData }: Pick<UserApi, 'formData'>) => {
     }
 }
 
+/**
+ * @description Funcion para actualizar un usuario
+ * @param param0 
+ * @returns 
+ */
+export const updateUser = async ({ usr_id, formData }: Pick<UserApi, 'usr_id' | 'formData'>) => {
+    try {
+        const url = `http://localhost:4000/api/travels/users/${usr_id}`
+        const { data } = await api.put<string>(url, formData);
+        return data
+    } catch (error) {
+        handlerApiError(error)
+    }
+}
